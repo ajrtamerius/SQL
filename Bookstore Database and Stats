@@ -1,0 +1,25 @@
+--Create a bookstore database 
+
+CREATE TABLE products (id INTEGER PRIMARY KEY, name TEXT, Quantity INTEGER, Aisle INTEGER, Cost INTEGER);
+
+INSERT INTO products VALUES (1, "Paperback books", 200, 3, 11.99);
+INSERT INTO products VALUES (2, "Hardback books", 167, 5, 16.99);
+INSERT INTO products VALUES (3, "Bookmarks", 300, 2, 1.49);
+INSERT INTO products VALUES (4, "Journals", 75, 2, 9.99);
+INSERT INTO products VALUES (5, "Games", 40, 4, 28.99);
+INSERT INTO products VALUES (6, "CDs", 100, 1, 8.99);
+INSERT INTO products VALUES (7, "Records", 80, 1, 19.99);
+INSERT INTO products VALUES (8, "Headphones", 20, 1, 21.99);
+INSERT INTO products VALUES (9, "Children's Books", 150, 4, 6.99);
+
+--display the database by Cost 
+SELECT * FROM products ORDER BY Cost Desc;
+
+--what items have less than 100 in stock?
+SELECT * FROM products WHERE quantity <100;
+
+--display the database by Aisle 
+SELECT * FROM products GROUP BY Aisle;
+
+--what items cost less than 15.99?
+SELECT * FROM products WHERE Cost < 15.99 ORDER BY Aisle;
